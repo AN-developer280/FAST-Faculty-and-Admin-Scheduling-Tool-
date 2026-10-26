@@ -1,0 +1,82 @@
+
+/* Dotted background effect */
+.dot-grid {
+  background-image: radial-gradient(
+    rgba(8, 145, 178, 0.22) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 30%,
+    transparent 75%
+  );
+
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 30%,
+    transparent 75%
+  );
+}
+
+/* Glass card in dark mode */
+.dark .glass-card {
+  background: rgba(8, 35, 57, 0.64);
+  border-color: rgba(125, 211, 252, 0.15);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Custom dark-mode input background */
+.dark .form-input {
+  background: rgba(2, 18, 35, 0.35);
+}
+
+/* Dark-mode input focus background */
+.dark .form-input:focus {
+  background: rgba(2, 18, 35, 0.65);
+}
+
+/* Custom dark-mode placeholder */
+.dark .form-input::placeholder {
+  color: rgba(186, 230, 253, 0.4);
+}
+
+/* Custom login button gradient */
+.login-button {
+  background: linear-gradient(
+    110deg,
+    #0891b2,
+    #0284c7,
+    #2563eb
+  );
+}
+
+/* Login button hover animation */
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.28);
+}
+
+/* Login button active state */
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* Custom glow blur */
+.soft-glow {
+  filter: blur(65px);
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
