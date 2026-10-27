@@ -1,0 +1,38 @@
+diff --git a/src/index.html b/src/index.html
+index cfb73f8..484f447 100644
+--- a/src/index.html
++++ b/src/index.html
+@@ -7,6 +7,7 @@
+ <meta name="description" content="FAST: timetables, syllabus tracking, diary and attendance for faculty and admin.">
+ <link rel="icon" href="images/FAST Logo.png" type="image/png">
+ <link rel="stylesheet" href="output.css">
++<!-- <link rel="stylesheet" href="style.css"> -->
+  <script>
+   tailwind.config = { darkMode: 'class' };
+   // Apply saved / system theme before the page paints (no flash)
+diff --git a/src/login.html b/src/login.html
+index e0499a5..47a01e8 100644
+--- a/src/login.html
++++ b/src/login.html
+@@ -53,6 +53,7 @@
+     </button>
+ 
+   </header>
++ 
+ 
+   <!-- Centered Login Form -->
+   <main class="relative z-10 flex flex-1 items-center justify-center px-4 py-10 sm:px-6">
+diff --git a/src/style.css b/src/style.css
+index 0232503..9a38ab5 100644
+--- a/src/style.css
++++ b/src/style.css
+@@ -1,4 +1,8 @@
+-
++/* html,
++body {
++  max-width: 100%;
++  overflow-x: hidden;
++} */
+ /* Dotted background effect */
+ .dot-grid {
+   background-image: radial-gradient(

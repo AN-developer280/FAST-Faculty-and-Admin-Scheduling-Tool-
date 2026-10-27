@@ -46,13 +46,44 @@
 }
 
 /* Custom login button gradient */
+/* .login-button {
+  background: linear-gradient(
+    110deg,
+    #115464,
+    #0284c7,
+    #254079
+  );
+}
+.login-button:hover{
+    background: linear-gradient(
+    110deg,
+    #0284c7,
+    #254079'
+    #8bd6e9,
+  );
+} */
+/* after changing */
 .login-button {
   background: linear-gradient(
     110deg,
-    #0891b2,
+    #115464,
     #0284c7,
-    #2563eb
+    #254079,
+    #8bd6e9,
+    #115464
   );
+
+  background-size: 250% 100%;
+  background-position: 0% 50%;
+
+  transition:
+    background-position 0.6s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-button:hover {
+  background-position: 100% 50%;
 }
 
 /* Login button hover animation */
@@ -80,3 +111,49 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Graduation cap floating animation */
+.cap-icon {
+  animation: float-cap 3s ease-in-out infinite;
+  transition: filter 0.3s ease;
+}
+
+.cap-icon:hover {
+  filter: drop-shadow(0 0 8px rgb(14 165 233 / 45%));
+}
+
+@keyframes float-cap {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Login form entrance animation */
+.login-card {
+  animation: form-entrance 0.8s ease-out both;
+}
+
+@keyframes form-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility: reduce motion when requested */
+@media (prefers-reduced-motion: reduce) {
+  .cap-icon,
+  .login-card {
+    animation: none;
+  }
+}
+
