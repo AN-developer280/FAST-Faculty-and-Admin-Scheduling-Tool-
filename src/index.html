@@ -97,8 +97,21 @@
         <span class="text-xl font-extrabold tracking-[0.25em] text-sky-900 dark:text-sky-100">FAST</span>
       </a>
       <button id="themeBtn" type="button" aria-label="Switch theme"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cyan-600/20 bg-white/70 text-lg shadow-sm backdrop-blur transition hover:border-cyan-500 hover:bg-white dark:border-sky-300/20 dark:bg-white/5 dark:hover:bg-white/10">
-        <span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cyan-600/20 bg-white/70 text-sky-900 shadow-sm backdrop-blur transition hover:border-cyan-500 hover:bg-white dark:border-sky-300/20 dark:bg-white/5 dark:text-cyan-200 dark:hover:bg-white/10">
+
+        <!-- Moon (shown in light mode) -->
+        <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" />
+        </svg>
+
+        <!-- Sun (shown in dark mode) -->
+        <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
       </button>
     </header>
 
