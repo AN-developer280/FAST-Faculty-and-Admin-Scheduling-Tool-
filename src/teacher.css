@@ -1,0 +1,94 @@
+/* FAST teacher dashboard: simple content styles (Home / Department). Works in light + dark. */
+
+:root {
+  --t-card: rgba(255, 255, 255, 0.85);
+  --t-card-hover: #ffffff;
+  --t-border: rgba(8, 145, 178, 0.25);
+  --t-title: #0c4a6e;
+  --t-text: #0f172a;
+  --t-muted: #475569;
+  --t-accent: #0891b2;
+  --t-link: #0369a1;
+}
+.dark {
+  --t-card: rgba(11, 34, 56, 0.75);
+  --t-card-hover: rgba(16, 48, 77, 0.9);
+  --t-border: rgba(125, 211, 252, 0.16);
+  --t-title: #7dd3fc;
+  --t-text: #f0f9ff;
+  --t-muted: rgba(186, 230, 253, 0.7);
+  --t-accent: #22d3ee;
+  --t-link: #22d3ee;
+}
+
+/* Background: just a faint dot grid (add <div class="t-bg"></div> after <body>) */
+.t-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(8, 145, 178, 0.18) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.dark .t-bg {
+  background-image: radial-gradient(rgba(125, 211, 252, 0.1) 1px, transparent 1px);
+}
+
+/* Page */
+.t-view { animation: t-in 0.3s ease-out both; }
+@keyframes t-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.t-heading {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 1.5rem; font-weight: 800; color: var(--t-title);
+}
+.t-heading::before {
+  content: ""; width: 5px; height: 1.6rem; border-radius: 9999px;
+  background: linear-gradient(to bottom, #22d3ee, #2563eb);
+}
+.t-sub { margin-top: 0.5rem; font-size: 0.9rem; color: var(--t-muted); }
+.t-section { margin: 1.5rem 0 0.6rem; font-weight: 700; color: var(--t-title); }
+.t-empty { font-size: 0.9rem; color: var(--t-muted); }
+.t-link { color: var(--t-link); font-weight: 600; font-size: 0.9rem; text-decoration: none; background: none; border: 0; cursor: pointer; padding: 0; }
+.t-link:hover { text-decoration: underline; }
+
+/* Warning */
+.t-alert {
+  margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 0.9rem; font-size: 0.9rem;
+  background: rgba(245, 158, 11, 0.13); border: 1px solid rgba(245, 158, 11, 0.4); color: #92400e;
+}
+.dark .t-alert { color: #fde68a; }
+
+/* Card */
+.t-card {
+  position: relative; color: var(--t-text);
+  background: var(--t-card); border: 1px solid var(--t-border); border-radius: 1.1rem;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px -10px rgba(14, 116, 144, 0.3);
+}
+.dark .t-card { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); }
+
+/* Home: stat cards */
+.t-stats { display: grid; gap: 1rem; margin-top: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.t-stat { padding: 1.1rem 1.25rem; overflow: hidden; }
+.t-stat::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, #22d3ee, #3b82f6); }
+.t-stat b { display: block; font-size: 1.9rem; font-weight: 800; color: var(--t-title); line-height: 1.1; }
+.t-stat span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--t-muted); }
+
+/* Department cards */
+.t-grid { display: grid; gap: 1rem; margin-top: 1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+button.t-pick { text-align: left; padding: 1rem 1.1rem; cursor: pointer; font: inherit; transition: transform 0.2s, background 0.2s, border-color 0.2s; }
+button.t-pick:hover { transform: translateY(-3px); background: var(--t-card-hover); border-color: var(--t-accent); }
+.t-pick strong { display: block; color: var(--t-text); }
+.t-pick small { color: var(--t-muted); font-size: 0.85rem; }
+
+/* Subject rows */
+.t-list { display: grid; gap: 0.6rem; }
+.t-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1rem; cursor: pointer; }
+.t-row:hover { border-color: var(--t-accent); }
+.t-row .name { flex: 1; min-width: 0; font-weight: 500; }
+.t-row .name small { margin-left: 0.3rem; font-size: 0.75rem; color: var(--t-muted); text-transform: uppercase; }
+.t-row .t-status { font-size: 0.85rem; color: var(--t-muted); }
+.t-check { width: 1.1rem; height: 1.1rem; accent-color: #0891b2; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) { .t-view, .t-pick { animation: none !important; transition: none !important; } }

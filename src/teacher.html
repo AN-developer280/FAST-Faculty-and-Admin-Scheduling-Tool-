@@ -9,6 +9,7 @@
   <link rel="icon" href="images/FAST Logo.png" type="image/svg+xml">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="teacher.css">
   <script>
     tailwind.config = {darkMode: 'class'};
     // Apply saved / system theme before the page paints (no flash). Same code on every page.
@@ -35,6 +36,7 @@
              selection:bg-cyan-200 selection:text-sky-900
              dark:from-[#04111f] dark:via-[#06182a] dark:to-[#08304d] dark:text-sky-50 dark:selection:bg-cyan-500/40 dark:selection:text-white"
   data-page="home">
+  <div class="t-bg" aria-hidden="true"></div>
 
   <!-- Dark overlay behind the sidebar on phones -->
   <div id="overlay" class="fixed inset-0 z-30 hidden bg-slate-900/50 backdrop-blur-sm lg:hidden"></div>
@@ -131,21 +133,23 @@
     </header>
     <!-- =================== /TOP BAR =================== -->
 
-    <main class="mx-auto max-w-5xl p-5 sm:p-8">
+    <!-- <main class="mx-auto max-w-5xl p-5 sm:p-8">
       <div
         class="rounded-2xl border border-cyan-600/20 bg-white/75 p-6 shadow-sm backdrop-blur dark:border-sky-300/15 dark:bg-[#0b2238]/70">
         <p class="font-semibold text-sky-900 dark:text-sky-100">Your page content goes here.</p>
         <p class="mt-1 text-sm text-slate-600 dark:text-sky-100/70">Scroll this page: the sidebar and the top bar stay
           exactly where they are.</p>
-      </div>
+      </div> -->
       <!-- extra height so the page can scroll (delete these three cards) -->
+      <!-- <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
       <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
       <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
-      <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
-    </main>
+    </main> -->
+    <main id="view" class="mx-auto max-w-5xl p-5 sm:p-8"></main>
   </div>
 
   <script src="js/teacher.js"></script>
+  <script src="js/teacher-pages.js"></script>
 </body>
 
 </html>
