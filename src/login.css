@@ -3,30 +3,50 @@
 /* Background layers */
 .bg-scene {
   background:
-    radial-gradient(60rem 40rem at 5% 25%, rgba(34, 211, 238, .35), transparent 60%),
-    radial-gradient(55rem 40rem at 95% 60%, rgba(96, 165, 250, .40), transparent 60%),
+    radial-gradient(
+      60rem 40rem at 5% 25%,
+      rgba(34, 211, 238, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      55rem 40rem at 95% 60%,
+      rgba(96, 165, 250, 0.4),
+      transparent 60%
+    ),
     linear-gradient(160deg, #f0fbff 0%, #dff4fb 50%, #cfeaf9 100%);
 }
 .dark .bg-scene {
   background:
-    radial-gradient(60rem 40rem at 5% 25%, rgba(6, 182, 212, .22), transparent 60%),
-    radial-gradient(55rem 40rem at 95% 60%, rgba(59, 130, 246, .25), transparent 60%),
+    radial-gradient(
+      60rem 40rem at 5% 25%,
+      rgba(6, 182, 212, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      55rem 40rem at 95% 60%,
+      rgba(59, 130, 246, 0.25),
+      transparent 60%
+    ),
     linear-gradient(160deg, #04121f 0%, #061a2e 50%, #081f3a 100%);
 }
 
 /* Light grid */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(14, 116, 144, .10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(14, 116, 144, .10) 1px, transparent 1px);
+    linear-gradient(rgba(14, 116, 144, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 116, 144, 0.1) 1px, transparent 1px);
   background-size: 48px 48px;
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
-          mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 30%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
 .dark .bg-grid {
   background-image:
-    linear-gradient(rgba(103, 232, 249, .07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(103, 232, 249, .07) 1px, transparent 1px);
+    linear-gradient(rgba(103, 232, 249, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 232, 249, 0.07) 1px, transparent 1px);
 }
 
 /* Perspective floor (static, lines converge toward the horizon) */
@@ -36,126 +56,238 @@
   perspective: 600px;
   perspective-origin: 50% 0;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
-          mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
 }
 .bg-floor::before {
   content: "";
   position: absolute;
-  top: 0; left: 50%;
-  width: 3200px; height: 500px;
+  top: 0;
+  left: 50%;
+  width: 3200px;
+  height: 500px;
   margin-left: -1600px;
   transform-origin: 50% 0;
   transform: rotateX(75deg);
   background-image:
-    linear-gradient(rgba(14, 165, 233, .38) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(14, 165, 233, .38) 1px, transparent 1px);
+    linear-gradient(rgba(14, 165, 233, 0.38) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.38) 1px, transparent 1px);
   background-size: 80px 80px;
   background-position: 50% 0;
 }
 .dark .bg-floor::before {
   background-image:
-    linear-gradient(rgba(34, 211, 238, .30) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, .30) 1px, transparent 1px);
+    linear-gradient(rgba(34, 211, 238, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.3) 1px, transparent 1px);
 }
 
 /* Glow blobs */
-.blob { animation: blobDrift 14s ease-in-out infinite alternate; }
-.blob-2 { animation-duration: 18s; animation-direction: alternate-reverse; }
+.blob {
+  animation: blobDrift 14s ease-in-out infinite alternate;
+}
+.blob-2 {
+  animation-duration: 18s;
+  animation-direction: alternate-reverse;
+}
 @keyframes blobDrift {
-  0%   { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(40px, -30px) scale(1.15); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(40px, -30px) scale(1.15);
+  }
 }
 
 /* Small glowing dots */
 .dot {
   position: absolute;
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
   border-radius: 9999px;
   background: #22d3ee;
-  box-shadow: 0 0 14px 4px rgba(34, 211, 238, .6);
-  animation: dotFloat 8s ease-in-out infinite, dotPulse 4s ease-in-out infinite;
+  box-shadow: 0 0 14px 4px rgba(34, 211, 238, 0.6);
+  animation:
+    dotFloat 8s ease-in-out infinite,
+    dotPulse 4s ease-in-out infinite;
 }
-.dot.blue { background: #3b82f6; box-shadow: 0 0 14px 4px rgba(59, 130, 246, .6); }
+.dot.blue {
+  background: #3b82f6;
+  box-shadow: 0 0 14px 4px rgba(59, 130, 246, 0.6);
+}
 @keyframes dotFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 @keyframes dotPulse {
-  0%, 100% { opacity: .55; }
-  50%      { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Glass card (light) */
 .glass-card {
-  background: rgba(255, 255, 255, .45);
-  border: 1px solid rgba(255, 255, 255, .7);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
-          backdrop-filter: blur(22px) saturate(160%);
-  box-shadow: 0 20px 60px -15px rgba(14, 116, 144, .35), inset 0 1px 0 rgba(255, 255, 255, .8);
+  backdrop-filter: blur(22px) saturate(160%);
+  box-shadow:
+    0 20px 60px -15px rgba(14, 116, 144, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* Card entrance (left card) */
-.enter-left  { animation: enterLeft .8s cubic-bezier(.2, .8, .2, 1) both; }
-@keyframes enterLeft  { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+.enter-left {
+  animation: enterLeft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes enterLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* Feature chips appear one by one */
-.stagger > * { animation: fadeUp .6s cubic-bezier(.2, .8, .2, 1) both; }
-.stagger > *:nth-child(1) { animation-delay: .45s; }
-.stagger > *:nth-child(2) { animation-delay: .55s; }
-.stagger > *:nth-child(3) { animation-delay: .65s; }
-.stagger > *:nth-child(4) { animation-delay: .75s; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.stagger > * {
+  animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.stagger > *:nth-child(1) {
+  animation-delay: 0.45s;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 0.55s;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 0.65s;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 0.75s;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* Logo glow */
-.logo-glow { animation: logoGlow 3.5s ease-in-out infinite; }
+.logo-glow {
+  animation: logoGlow 3.5s ease-in-out infinite;
+}
 @keyframes logoGlow {
-  0%, 100% { box-shadow: 0 0 25px rgba(34, 211, 238, .35); }
-  50%      { box-shadow: 0 0 45px rgba(59, 130, 246, .55); }
+  0%,
+  100% {
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(59, 130, 246, 0.55);
+  }
 }
 
 /* Login button shine */
-.btn-shine { position: relative; overflow: hidden; }
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
 .btn-shine::after {
   content: "";
-  position: absolute; top: 0; left: -80%;
-  width: 50%; height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent);
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
   transform: skewX(-20deg);
   animation: shine 3.5s ease-in-out infinite;
 }
-@keyframes shine { 0% { left: -80%; } 55%, 100% { left: 140%; } }
+@keyframes shine {
+  0% {
+    left: -80%;
+  }
+  55%,
+  100% {
+    left: 140%;
+  }
+}
 
 /* Shake on invalid login */
-.shake { animation: shake .45s; }
+.shake {
+  animation: shake 0.45s;
+}
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-8px); }
-  40%, 80% { transform: translateX(8px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  40%,
+  80% {
+    transform: translateX(8px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
-
 
 /* ===== Project styles ===== */
 
 /* Dotted background effect */
 .dot-grid {
-  background-image: radial-gradient(rgba(8, 145, 178, 0.22) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(8, 145, 178, 0.22) 1px,
+    transparent 1px
+  );
   background-size: 26px 26px;
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
-          mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 30%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
 
 /* Glass card in dark mode */
 .dark .glass-card {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02) 45%, rgba(125, 211, 252, 0.06)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.02) 45%,
+      rgba(125, 211, 252, 0.06)
+    ),
     rgba(8, 35, 57, 0.38);
   border-color: rgba(125, 211, 252, 0.28);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
-          backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
   box-shadow:
     0 25px 70px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
@@ -163,45 +295,85 @@
 }
 
 /* Custom dark-mode input */
-.dark .form-input { background: rgba(2, 18, 35, 0.35); }
-.dark .form-input:focus { background: rgba(2, 18, 35, 0.65); }
-.dark .form-input::placeholder { color: rgba(186, 230, 253, 0.4); }
+.dark .form-input {
+  background: rgba(2, 18, 35, 0.35);
+}
+.dark .form-input:focus {
+  background: rgba(2, 18, 35, 0.65);
+}
+.dark .form-input::placeholder {
+  color: rgba(186, 230, 253, 0.4);
+}
 
 /* Login button gradient */
 .login-button {
-  background: linear-gradient(110deg, #115464, #0284c7, #254079, #8bd6e9, #115464);
+  background: linear-gradient(
+    110deg,
+    #115464,
+    #0284c7,
+    #254079,
+    #8bd6e9,
+    #115464
+  );
   background-size: 250% 100%;
   background-position: 0% 50%;
-  transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-position 0.6s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .login-button:hover {
   background-position: 100% 50%;
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(2, 132, 199, 0.28);
 }
-.login-button:active { transform: translateY(0); }
+.login-button:active {
+  transform: translateY(0);
+}
 
 /* Custom glow blur */
-.soft-glow { filter: blur(65px); }
+.soft-glow {
+  filter: blur(65px);
+}
 
 /* Graduation cap floating animation */
-.cap-icon { animation: float-cap 3s ease-in-out infinite; transition: filter 0.3s ease; }
-.cap-icon:hover { filter: drop-shadow(0 0 8px rgb(14 165 233 / 45%)); }
+.cap-icon {
+  animation: float-cap 3s ease-in-out infinite;
+  transition: filter 0.3s ease;
+}
+.cap-icon:hover {
+  filter: drop-shadow(0 0 8px rgb(14 165 233 / 45%));
+}
 @keyframes float-cap {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Login form entrance animation (right card) */
-.login-card { animation: form-entrance 0.8s 0.15s ease-out both; }
+.login-card {
+  animation: form-entrance 0.8s 0.15s ease-out both;
+}
 @keyframes form-entrance {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Hide the browser's built-in password eye (Edge/Chrome) so only our own icon shows */
 input::-ms-reveal,
-input::-ms-clear { display: none; }
+input::-ms-clear {
+  display: none;
+}
 input::-webkit-credentials-auto-fill-button {
   visibility: hidden;
   display: none !important;
@@ -210,5 +382,11 @@ input::-webkit-credentials-auto-fill-button {
 
 /* Side dots: placed symmetrically in the free space beside the cards.
    Hidden on narrower screens where the cards would cover them. */
-.dot-side { display: none; }
-@media (min-width: 1280px) { .dot-side { display: block; } }
+.dot-side {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .dot-side {
+    display: block;
+  }
+}
