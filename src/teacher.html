@@ -7,11 +7,11 @@
   <title>Teacher dashboard — FAST</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="images/FAST Logo.png" type="image/svg+xml">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="output.css">
   <link rel="stylesheet" href="teacher.css">
   <script>
-    tailwind.config = {darkMode: 'class'};
+    tailwind.config = { darkMode: 'class' };
     // Apply saved / system theme before the page paints (no flash). Same code on every page.
     try {
       const saved = window.FAST ? FAST.getTheme() : localStorage.getItem('fast-theme');
@@ -140,16 +140,19 @@
         <p class="mt-1 text-sm text-slate-600 dark:text-sky-100/70">Scroll this page: the sidebar and the top bar stay
           exactly where they are.</p>
       </div> -->
-      <!-- extra height so the page can scroll (delete these three cards) -->
-      <!-- <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
+    <!-- extra height so the page can scroll (delete these three cards) -->
+    <!-- <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
       <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
       <div class="mt-5 h-72 rounded-2xl border border-dashed border-cyan-600/25 dark:border-sky-300/15"></div>
     </main> -->
     <main id="view" class="mx-auto max-w-5xl p-5 sm:p-8"></main>
   </div>
 
+
   <script src="js/teacher.js"></script>
   <script src="js/teacher-pages.js"></script>
+  <script src="js/timetable.js"></script>
+
 </body>
 
 </html>
