@@ -1,6 +1,6 @@
 
 /* Dotted background effect */
-.dot-grid {
+/* .dot-grid {
   background-image: radial-gradient(
     rgba(8, 145, 178, 0.22) 1px,
     transparent 1px
@@ -18,7 +18,7 @@
     #000 30%,
     transparent 75%
   );
-}
+} */
 
 /* Glass card in dark mode */
 .dark .glass-card {
