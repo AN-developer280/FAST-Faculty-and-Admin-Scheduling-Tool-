@@ -7,6 +7,8 @@
   <title>FAST — Faculty and Admin Scheduling Tool</title>
   <meta name="description" content="FAST: timetables, syllabus tracking, diary and attendance for faculty and admin.">
   <link rel="icon" href="images/FAST%20Logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   <link rel="stylesheet" href="output.css">
 
   <script>
@@ -30,11 +32,23 @@
     <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
 
       <!-- Colour glows (corners) -->
-      <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-cyan-300/50 blur-3xl dark:bg-cyan-500/25"></div>
+      
+ <!-- <div class="absolute inset-0 pointer-events-none
+    bg-gradient-to-tr
+    from-transparent via-cyan-400/10 to-blue-500/20
+    dark:from-cyan-500/5 dark:via-blue-500/10 dark:to-cyan-400/10">
+</div> -->
+ <div class="absolute inset-0 pointer-events-none
+    bg-gradient-to-br
+    from-cyan-200 via-sky-100 to-blue-200
+    dark:from-slate-900 dark:via-slate-800 dark:to-cyan-800">
+</div>
+ 
+      <!-- <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-cyan-300/50 blur-3xl dark:bg-cyan-500/25"></div>
       <div
         class="absolute -right-28 top-1/4 h-[30rem] w-[30rem] rounded-full bg-blue-400/35 blur-3xl dark:bg-blue-600/30">
       </div>
-      <div class="absolute -bottom-40 left-1/4 h-96 w-96 rounded-full bg-sky-300/40 blur-3xl dark:bg-sky-500/20"></div>
+      <div class="absolute -bottom-40 left-1/4 h-96 w-96 rounded-full bg-sky-300/40 blur-3xl dark:bg-sky-500/20"></div> -->
 
       <!-- Aurora band behind the logo and title -->
       <div class="absolute left-1/2 top-[38%] h-72 w-[min(70rem,120%)] -translate-x-1/2 -translate-y-1/2 rounded-[50%]
@@ -52,7 +66,7 @@
       </div>
 
       <!-- Perspective floor: the same grid running away to a horizon -->
-      <div class="absolute inset-x-0 bottom-0 h-[44%] overflow-hidden"
+      <!-- <div class="absolute inset-x-0 bottom-0 h-[44%] overflow-hidden"
         style="-webkit-mask-image:linear-gradient(to bottom,transparent,#000 75%);mask-image:linear-gradient(to bottom,transparent,#000 75%)">
         <div class="absolute left-[-60%] top-0 h-[300%] w-[220%] dark:hidden"
           style="transform-origin:50% 0;transform:perspective(360px) rotateX(66deg);background-image:linear-gradient(rgba(8,145,178,.34) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(8,145,178,.34) 1.5px,transparent 1.5px);background-size:72px 72px;background-position:center top">
@@ -60,20 +74,21 @@
         <div class="absolute left-[-60%] top-0 hidden h-[300%] w-[220%] dark:block"
           style="transform-origin:50% 0;transform:perspective(360px) rotateX(66deg);background-image:linear-gradient(rgba(34,211,238,.30) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(34,211,238,.30) 1.5px,transparent 1.5px);background-size:72px 72px;background-position:center top">
         </div>
-      </div>
+      </div> -->
       <!-- Horizon glow -->
-      <div
+      <!-- <div
         class="absolute inset-x-0 bottom-[44%] h-24 translate-y-1/2 bg-gradient-to-b from-transparent via-cyan-300/25 to-transparent blur-xl dark:via-cyan-400/15">
-      </div>
+      </div> -->
 
       <!-- Glowing nodes on grid crossings (large screens only) -->
       <div class="hidden lg:block">
+        
         <i
-          class="absolute left-[calc(50%-483px)] top-[calc(50%-163px)] h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_14px_4px_rgba(34,211,238,.65)]"></i>
+          class="absolute left-[calc(50%-500px)] top-[calc(50%-90px)] h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_14px_4px_rgba(34,211,238,.65)]"></i>
         <i
-          class="absolute left-[calc(50%-419px)] top-[calc(50%+29px)] h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_14px_4px_rgba(59,130,246,.6)]"></i>
+          class="absolute left-[calc(50%-350px)] top-[calc(50%+29px)] h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_14px_4px_rgba(59,130,246,.6)]"></i>
         <i
-          class="absolute left-[calc(50%-355px)] top-[calc(50%-291px)] h-1.5 w-1.5 rounded-full bg-sky-400 shadow-[0_0_14px_4px_rgba(56,189,248,.65)]"></i>
+          class="absolute left-[calc(50%-355px)] top-[calc(50%-200px)] h-1.5 w-1.5 rounded-full bg-sky-400 shadow-[0_0_14px_4px_rgba(56,189,248,.65)]"></i>
         <i
           class="absolute left-[calc(50%+413px)] top-[calc(50%-227px)] h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_14px_4px_rgba(34,211,238,.65)]"></i>
         <i
@@ -100,18 +115,10 @@
         class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cyan-600/20 bg-white/70 text-sky-900 shadow-sm backdrop-blur transition hover:border-cyan-500 hover:bg-white dark:border-sky-300/20 dark:bg-white/5 dark:text-cyan-200 dark:hover:bg-white/10">
 
         <!-- Moon (shown in light mode) -->
-        <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" />
-        </svg>
+         <i class="fa-solid fa-moon text-lg text-slate-700 dark:hidden"></i>
 
         <!-- Sun (shown in dark mode) -->
-        <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="4" />
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-        </svg>
+        <i class="fa-solid fa-sun hidden h-5 w-5 text-cyan-600 dark:block dark:text-cyan-300"></i>
       </button>
     </header>
 
@@ -138,55 +145,38 @@
         <a href="login.html"
           class="group mt-9 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-12 py-3.5 text-lg font-semibold text-white shadow-lg shadow-cyan-500/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-cyan-500/40 focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-400/50">
           Login
-          <svg class="h-5 w-5 transition group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor"
-            aria-hidden="true">
-            <path fill-rule="evenodd"
-              d="M3 10a1 1 0 011-1h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 01-1-1z"
-              clip-rule="evenodd" />
-          </svg>
+          <i class="fa-solid fa-arrow-right transition group-hover:translate-x-0.5"></i>
         </a>
         <p class="mt-4 pt-2 text-sm text-slate-600 dark:text-sky-100/70">
           Only users registered by the admin can log in.
         </p>
         <ul class="mt-12 flex flex-wrap items-center justify-center gap-2.5 text-sm">
+
           <li
             class="inline-flex items-center gap-2 rounded-full border border-cyan-600/20 bg-white/70 px-4 py-1.5 text-sky-900 shadow-sm backdrop-blur dark:border-sky-300/20 dark:bg-white/5 dark:text-sky-100">
-            <svg class="h-4 w-4 shrink-0 text-cyan-600 dark:text-cyan-300" style="width:1rem;height:1rem"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
-              <path d="M3 9.5h18M8 2.5v4M16 2.5v4" />
-              <path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01" />
-            </svg>Timetable
+            <i class="fa-solid fa-calendar-days text-cyan-600 dark:text-cyan-300"></i>
+            Timetable
           </li>
+
           <li
             class="inline-flex items-center gap-2 rounded-full border border-cyan-600/20 bg-white/70 px-4 py-1.5 text-sky-900 shadow-sm backdrop-blur dark:border-sky-300/20 dark:bg-white/5 dark:text-sky-100">
-            <svg class="h-4 w-4 shrink-0 text-cyan-600 dark:text-cyan-300" style="width:1rem;height:1rem"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" />
-              <circle cx="12" cy="12" r="5" />
-              <circle cx="12" cy="12" r="1.2" fill="currentColor" />
-            </svg>Syllabus Tracker
+            <i class="fa-solid fa-bullseye text-cyan-600 dark:text-cyan-300"></i>
+            Syllabus Tracker
           </li>
+
           <li
             class="inline-flex items-center gap-2 rounded-full border border-cyan-600/20 bg-white/70 px-4 py-1.5 text-sky-900 shadow-sm backdrop-blur dark:border-sky-300/20 dark:bg-white/5 dark:text-sky-100">
-            <svg class="h-4 w-4 shrink-0 text-cyan-600 dark:text-cyan-300" style="width:1rem;height:1rem"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 6.5C10.3 5.2 8 4.7 4 4.7v13c4 0 6.3.5 8 1.8 1.7-1.3 4-1.8 8-1.8v-13c-4 0-6.3.5-8 1.8z" />
-              <path d="M12 6.5v13" />
-            </svg>Teacher Diary
+            <i class="fa-solid fa-book-open text-cyan-600 dark:text-cyan-300"></i>
+            Teacher Diary
           </li>
+
           <li
             class="inline-flex items-center gap-2 rounded-full border border-cyan-600/20 bg-white/70 px-4 py-1.5 text-sky-900 shadow-sm backdrop-blur dark:border-sky-300/20 dark:bg-white/5 dark:text-sky-100">
-            <svg class="h-4 w-4 shrink-0 text-cyan-600 dark:text-cyan-300" style="width:1rem;height:1rem"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M8 12.5l2.8 2.8L16.5 9.5" />
-            </svg>Attendance
+            <i class="fa-solid fa-circle-check text-cyan-600 dark:text-cyan-300"></i>
+            Attendance
           </li>
+
+
         </ul>
       </div>
     </main>
